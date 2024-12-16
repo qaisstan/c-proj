@@ -1,0 +1,97 @@
+/src
+  /app
+    /components
+      /layout
+        Footer.jsx
+        Header.jsx
+        Layout.jsx
+      /home
+        HeroSection.jsx
+        NewsCarousel.jsx
+        BlogCarousel.jsx
+        CryptoPrices.jsx
+        LearnSection.jsx
+      /blog
+        BlogCard.jsx
+      /news
+        NewsCard.jsx
+      /shared
+        Button.jsx
+        Card.jsx
+        Loading.jsx
+        ShareButtons.jsx
+        CryptoIcon.jsx
+      /learn
+        /paths
+          BeginnerPath.jsx
+          InvestorPath.jsx
+          TraderPath.jsx
+          DeveloperPath.jsx
+        /common
+          PathCard.jsx
+          ProgressBar.jsx
+          LessonCard.jsx
+          QuizCard.jsx
+        /[path]
+          /[lesson]
+            page.jsx
+          page.jsx
+        page.jsx
+        /interactive
+          PriceCalculator.jsx
+          TradingSimulator.jsx
+          PortfolioTracker.jsx
+          RiskAssessment.jsx
+          YieldCalculator.jsx
+          GasEstimator.jsx
+    /lib
+      /api
+        blogPosts.js
+        cryptoNews.js
+        cryptoPrices.js
+      /utils
+        formatters.js
+        constants.js
+    /blog
+      /[id]
+        page.jsx
+      page.jsx
+    /news
+      /[id]
+        page.jsx
+      page.jsx
+    /styles
+      globals.css
+    layout.jsx
+    page.jsx
+    /tools
+      /calculators
+        page.jsx
+        PriceCalculator.jsx
+        YieldCalculator.jsx
+        GasEstimator.jsx
+      /simulators
+        page.jsx
+        TradingSimulator.jsx
+        PortfolioTracker.jsx
+      /analysis
+        page.jsx
+        RiskAssessment.jsx
+        MarketAnalyzer.jsx
+      page.jsx
+/public
+  /images
+    logo.svg
+    hero-bg.jpg
+    placeholder.png
+.env
+.gitignore
+next.config.js
+package.json
+postcss.config.js
+README.md
+tailwind.config.js
+/prices
+  /[id]
+    page.jsx
+  page.jsx

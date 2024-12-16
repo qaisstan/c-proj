@@ -2,20 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-50;
 }
+
+/* Form styles */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md;
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+button {
+  @apply px-4 py-2 rounded-md transition-colors;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+/* Layout utilities */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-600 hover:text-blue-600 transition-colors;
+}
+
+/* Button variants */
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+  @apply focus:ring-blue-500;
+}
+
+.btn-secondary {
+  @apply bg-gray-600 text-white hover:bg-gray-700;
+  @apply focus:ring-gray-500;
+}
+
+/* Layout utilities */
+.section {
+  @apply py-12;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-gray-900 mb-8;
+} 
