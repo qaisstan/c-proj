@@ -18,4 +18,24 @@ export const formatDate = (dateString) => {
     hour: '2-digit',
     minute: '2-digit'
   }).format(date)
+}
+
+export const formatError = (error) => {
+  if (typeof error === 'string') return error
+  if (error.message) return error.message
+  return 'An unexpected error occurred'
+}
+
+export const formatAuthResponse = (data) => {
+  if (!data.user || !data.token) {
+    throw new Error('Invalid authentication response')
+  }
+  return {
+    user: {
+      id: data.user.id,
+      name: data.user.name,
+      email: data.user.email,
+    },
+    token: data.token,
+  }
 } 

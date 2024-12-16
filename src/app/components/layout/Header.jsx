@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AuthButton from '../auth/AuthButton'
 
 const Header = () => {
   const navigation = [
@@ -18,15 +19,18 @@ const Header = () => {
             CryptoEdu
           </Link>
 
-          <ul className="flex gap-8">
-            {navigation.map((item) => (
-              <li key={item.name}>
-                <Link href={item.href} className="hover:text-blue-600">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center gap-8">
+            <ul className="flex gap-8">
+              {navigation.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="hover:text-blue-600">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <AuthButton />
+          </div>
         </nav>
       </div>
     </header>

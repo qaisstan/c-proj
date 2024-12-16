@@ -34,3 +34,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# CryptoEdu Platform
+
+## Authentication Setup
+
+The platform uses JWT-based authentication with MongoDB. Authentication is optional for users, allowing them to:
+- Browse content without logging in
+- Create an account to save preferences
+- Login to access personalized features
+
+### Environment Variables
+
+Required environment variables:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_jwt_secret
+```
+
+Would you like me to:
+1. Add proper error handling middleware?
+2. Add token verification middleware?
+3. Add user session management?
+4. Add password reset functionality?
+
+Let me know what you'd like me to fix or add next!

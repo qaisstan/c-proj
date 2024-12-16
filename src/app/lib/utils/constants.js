@@ -9,4 +9,16 @@ export const SOCIAL_LINKS = {
 export const API_ENDPOINTS = {
   news: 'YOUR_NEWS_API_ENDPOINT',
   prices: 'YOUR_PRICES_API_ENDPOINT'
+}
+
+export const AUTH_CONFIG = {
+  tokenKey: 'token',
+  userKey: 'user',
+  expiresIn: '7d',
+}
+
+export const API_ROUTES = {
+  login: '/api/auth/login',
+  signup: '/api/auth/signup',
+  logout: '/api/auth/logout',
 } 
