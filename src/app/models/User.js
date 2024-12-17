@@ -2,6 +2,11 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 
 const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Name is required'],
+    trim: true
+  },
   email: {
     type: String,
     required: [true, 'Email is required'],
@@ -11,13 +16,25 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Password is required'],
-    minlength: 6
+    minlength: 6,
+    // Not required for social login
+    required: function() {
+      return !this.socialProvider
+    }
   },
-  name: {
+  socialProvider: {
     type: String,
-    required: [true, 'Name is required'],
-    trim: true
+    enum: ['google', 'facebook', 'github', null],
+    default: null,
+    required: false
+  },
+  socialId: {
+    type: String,
+    required: false
+  },
+  image: {
+    type: String,
+    required: false
   },
   createdAt: {
     type: Date,
@@ -25,9 +42,9 @@ const userSchema = new mongoose.Schema({
   }
 })
 
-// Hash password before saving
+// Only hash password for non-social users
 userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next()
+  if (!this.isModified('password') || this.socialProvider) return next()
   
   try {
     const salt = await bcrypt.genSalt(10)
@@ -38,8 +55,8 @@ userSchema.pre('save', async function(next) {
   }
 })
 
-// Method to check password
 userSchema.methods.comparePassword = async function(candidatePassword) {
+  if (this.socialProvider) return false
   return bcrypt.compare(candidatePassword, this.password)
 }
 

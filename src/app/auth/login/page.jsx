@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useAuth } from '@/app/context/AuthContext'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import SocialLogin from '@/app/components/auth/SocialLogin'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -74,6 +75,10 @@ export default function LoginPage() {
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
+
+        <div className="mt-6">
+          <SocialLogin />
+        </div>
 
         <p className="mt-4 text-center text-gray-600">
           Don't have an account?{' '}
